@@ -4,6 +4,9 @@ import scientificCalculator
 def cal(event):
     global expression
     text = event.widget.cget("text")
+    if expression.get()=='SyntaxError' or expression.get()=='ERROR':
+        expression.set("")
+        panel.update()
     print(text)
     if text == '=':
         try:
